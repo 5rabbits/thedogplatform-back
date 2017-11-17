@@ -8,11 +8,11 @@ module V1
       
       desc 'Create new user'
       params do
-        requires :username, String, desc: 'User username'
-        requires :password, String, desc: 'User password'
+        requires :username, type: String, desc: 'User username'
+        requires :password, type: String, desc: 'User password'
         requires :name, type: String, desc: 'User name'
-        requires :email, type: String, desc: 'User email'
-        requires :phone_number, type: String, desc: 'User phone number'
+        optional :email, type: String, desc: 'User email'
+        optional :phone_number, type: String, desc: 'User phone number'
       end
       post do
         user = User.create_from_params params

@@ -9,13 +9,13 @@ module V1
       desc 'Create new speciality'
       params do
         requires :user_id, type: Integer, desc: 'Dog owner id'
-        requires :name, type: String, desc: 'Dog name'
-        requires :race, type: String, desc: 'Dog race'
-        requires :age, type: Integer, desc: 'Dog age'
+        optional :name, type: String, desc: 'Dog name'
+        optional :race, type: String, desc: 'Dog race'
+        optional :age, type: Integer, desc: 'Dog age'
         requires :colour, type: String, desc: 'Dog color'
         requires :size, type: String, desc: 'Dog size'
         requires :aggressiveness, type: Integer, desc: 'Dog aggressiveness'
-        requires :photo, type: String, desc: 'Dog photo'
+        optional :photo, type: String, desc: 'Dog photo'
       end
       post do
         dog = Dog.create_from_params params

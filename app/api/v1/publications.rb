@@ -12,8 +12,8 @@ module V1
         requires :dog_id, type: Integer, desc: 'Dog id'
         requires :status, type: String, desc: 'Publication status'
         requires :place, type: String, desc: 'Dog last location'
-        requires :date, type: Date, desc: 'Date of last encounter'
-        requires :description, type: String, desc: 'Encounter description'
+        optional :date, type: Date, desc: 'Date of last encounter'
+        optional :description, type: String, desc: 'Encounter description'
       end
       post do
         publication = Publication.create_from_params params
