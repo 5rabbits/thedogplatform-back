@@ -39,3 +39,8 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Grape API
+gem 'grape', '~> 1.0.1'
+gem 'grape-entity', '~> 0.6.1'
+gem 'grape_on_rails_routes', '~> 0.3.2'
