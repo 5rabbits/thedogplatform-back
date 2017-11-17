@@ -19,4 +19,9 @@ class Dog < ApplicationRecord
     entry.photo = attributes[:photo]
     entry
   end
+  
+  def self.find_by_id(id)
+    entry = Dog.find_by(id: id)
+    entry
+  end
 end

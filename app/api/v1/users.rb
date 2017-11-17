@@ -19,6 +19,15 @@ module V1
         error! 'Unprocessable Entity', 422 unless user.save
         user
       end
+
+      route_param :id do
+        desc 'Get user by ID'
+        get do
+          user = User.find_by_id(params[:id])
+          error! 'Not Found', 404 unless user
+          present user, with: Entities::User
+        end
+      end
     end
   end
 end

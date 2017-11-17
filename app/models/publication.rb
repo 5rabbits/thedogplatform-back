@@ -21,4 +21,9 @@ class Publication < ApplicationRecord
     entry.description = attributes[:description]
     entry
   end
+
+  def self.find_by_id(id)
+    entry = Publication.find_by(id: id)
+    entry
+  end
 end
