@@ -15,4 +15,9 @@ class User < ApplicationRecord
     entry.phone_number = attributes[:phone_number]
     entry
   end
+
+  def self.find_by_id(id)
+    entry = User.find_by(id: id)
+    entry
+  end
 end

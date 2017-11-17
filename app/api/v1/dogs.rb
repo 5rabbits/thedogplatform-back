@@ -22,6 +22,15 @@ module V1
         error! 'Unprocessable Entity', 422 unless dog.save
         dog
       end
+
+      route_param :id do
+        desc 'Get dog by ID'
+        get do
+          dog = Dog.find_by_id(params[:id])
+          error! 'Not Found', 404 unless dog
+          present dog, with: Entities::Dog
+        end
+      end
     end
   end
 end

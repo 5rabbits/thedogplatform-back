@@ -20,6 +20,15 @@ module V1
         error! 'Unprocessable Entity', 422 unless publication.save
         publication
       end
+
+      route_param :id do
+        desc 'Get publication by ID'
+        get do
+          publication = Publication.find_by_id(params[:id])
+          error! 'Not Found', 404 unless publication
+          present publication, with: Entities::Publication
+        end
+      end
     end
   end
 end
