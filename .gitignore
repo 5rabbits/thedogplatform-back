@@ -15,3 +15,7 @@
 
 .byebug_history
 .idea
+
+/config/cable.yml
+/config/database.yml
+/config/secrets.yml
